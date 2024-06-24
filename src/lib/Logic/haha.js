@@ -118,35 +118,6 @@ let Data = {
 		Data.tape.tape1.splice(6 + Mvalue + Nvalue + 1, 0, 1);
 	},
 
-	reset: () => {
-		for (let i = 0; i < 5; i++) {
-			Data.tape[i] = [
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B',
-				'B'
-			];
-		}
-
-		Data.index.tape1 = [2, 11];
-
-		for (let i = 1; i < 5; i++) {
-			Data.index[i] = [6, 15];
-		}
-	},
-
 	q0: () => {
 		if (data.checker([0, 'B', 'B', 'B', 'B'])) {
 			data.change('tape2', 0);

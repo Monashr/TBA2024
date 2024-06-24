@@ -92,8 +92,8 @@
 
 		<Button handleClick={reset} name="Reset" state={true} />
 
-		<NotBox data={Data.state} name="State ="/>
-		<NotBox data={result} name="Result ="/>
+		<NotBox data={Data.state} name="State =" />
+		<NotBox data={result} name="Result =" />
 	</div>
 </div>
 

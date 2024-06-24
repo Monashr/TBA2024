@@ -4,7 +4,8 @@
 </script>
 
 <div class="minimal-box">
-	{name} {data}
+	{name}
+	{data}
 </div>
 
 <style>
