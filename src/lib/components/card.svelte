@@ -1,6 +1,6 @@
 <script>
 	import Tape from './tape.svelte';
-	import { data } from '../Logic/haha';
+	import { data } from '../Logic/Logic';
 	import Button from './button.svelte';
 	import NotBox from './notBox.svelte';
 	import Form from './form.svelte';
