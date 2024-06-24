@@ -1,9 +1,10 @@
 <script>
 	export let data;
+	export let name;
 </script>
 
 <div class="minimal-box">
-	{data}
+	{name} {data}
 </div>
 
 <style>

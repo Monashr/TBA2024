@@ -3,21 +3,25 @@
 
 	let Mvalue = 0;
 	let Nvalue = 0;
+	let runningTime = 100;
 	const dispatch = createEventDispatcher();
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		dispatch('submit', { Mvalue, Nvalue });
+		dispatch('submit', { Mvalue, Nvalue, runningTime });
 	}
 </script>
 
 <div class="form-container">
 	<form on:submit={handleSubmit}>
 		<div class="form-group">
-			<input type="text" bind:value={Mvalue} placeholder="M Value" required />
+			<input type="number" bind:value={Mvalue} placeholder="M Value" required />
 		</div>
 		<div class="form-group">
-			<input type="text" bind:value={Nvalue} placeholder="N Value" required />
+			<input type="number" bind:value={Nvalue} placeholder="N Value" required />
+		</div>
+		<div class="form-group">
+			<input type="number" bind:value={runningTime} placeholder="runningTime" required />
 		</div>
 		<button type="submit" class="insert-button">insert</button>
 	</form>

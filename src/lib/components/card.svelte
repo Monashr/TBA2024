@@ -13,11 +13,17 @@
 
 	let isPaused = false;
 	let isRunning = false;
+	let Time = 100;
 
 	function handleSubmit(event) {
-		const { Mvalue, Nvalue } = event.detail;
+		const { Mvalue, Nvalue, runningTime } = event.detail;
 		Data.insert(Mvalue, Nvalue);
+		Time = runningTime;
 		Data = Data;
+	}
+
+	function reset() {
+		location.reload();
 	}
 
 	async function handleClick() {
@@ -26,7 +32,7 @@
 			if (!isPaused) {
 				await shiftAndRender();
 			}
-			await sleep(100);
+			await sleep(Time);
 		}
 	}
 
@@ -82,10 +88,12 @@
 			<Button handleClick={resume} name="Resume" state={true} />
 		{/if}
 
-		<Button handleClick={next} name="next" state={true} />
+		<Button handleClick={next} name="Next" state={true} />
 
-		<NotBox data={Data.state} />
-		<NotBox data={result} />
+		<Button handleClick={reset} name="Reset" state={true} />
+
+		<NotBox data={Data.state} name="State ="/>
+		<NotBox data={result} name="Result ="/>
 	</div>
 </div>
 
@@ -94,6 +102,7 @@
 		width: 50%;
 		min-width: 800px;
 		height: 70vh;
+		min-height: 550px;
 		background-color: white;
 		box-shadow: 6px 6px 20px 0 rgba(0, 0, 0, 0.2);
 		padding: 20px;

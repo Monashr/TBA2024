@@ -12,8 +12,14 @@
 	<LeftArrow active={activeArrow == 'left' ? true : false} />
 
 	{#each arr as arrs, i}
-		{#if i == 4}
-			<Box BoxColor={'red'} value={arrs} />
+		{#if i == 0 || i == arr.length - 1}
+			<Box value={arrs} fontsize="15px"/>
+		{:else if i == 3 && activeArrow == "right"}
+			<Box value={arrs} fontsize="20px" textcolor="#7c5bca" />
+		{:else if i == 5 && activeArrow == "left"}
+			<Box value={arrs} fontsize="20px" textcolor="#7c5bca" />
+		{:else if i == 4}
+			<Box BoxColor={'#7c5bca'} value={arrs} fontsize="25px"/>
 		{:else}
 			<Box value={arrs} />
 		{/if}
