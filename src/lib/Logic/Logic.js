@@ -105,6 +105,12 @@ let Data = {
 		Mvalue = parseInt(Mvalue);
 		Nvalue = parseInt(Nvalue);
 
+		if (Mvalue < 0) {
+			Mvalue = 0;
+		} else if (Nvalue < 0) {
+			Nvalue = Nvalue * -1 + Mvalue;
+		}
+
 		for (let i = 0; i < Mvalue; i++) {
 			Data.tape.tape1.splice(6 + i, 0, 0);
 		}
@@ -235,6 +241,7 @@ let Data = {
 			data.state = 'q8';
 			return data.arrow('right', 'right', 'right', 'stop', 'stop');
 		} else if (data.checker([0, 0, 'B', 'B', 'B'])) {
+			data.change('tape5', 'D');
 			data.state = 'qe';
 			return data.arrow('stop', 'stop', 'stop', 'stop', 'stop');
 		}
@@ -349,6 +356,7 @@ let Data = {
 
 	q13: () => {
 		if (data.checker([0, 'B', 'B', 'B', 'B'])) {
+			data.change('tape5', 'D');
 			data.state = 'qe';
 			return data.arrow('stop', 'stop', 'stop', 'stop', 'stop');
 		} else if (data.checker([1, 'B', 'B', 'B', 'B'])) {
